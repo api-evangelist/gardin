@@ -1,0 +1,32 @@
+generated: '2026-07-19'
+method: searched
+source: https://developers.gardin.ag/docs/gardin-api/acquire-access-token-client-credentials-flow
+docs: https://developers.gardin.ag/docs/gardin-api/gardin-api
+summary:
+  types: [oauth2, http]
+  oauth2_flows: [clientCredentials]
+  token_format: JWT
+  credentials: Client Id + Client Secret issued by Gardin Support
+schemes:
+- name: OAuth2ClientCredentials
+  type: oauth2
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://login.gardin.ag/oauth2/token
+    client_auth: HTTP Basic (Base64 of "<CLIENT_ID>:<CLIENT_SECRET>" in Authorization header)
+    grant_type: client_credentials
+    token_type: Bearer
+    token_format: JWT
+    expires_in_seconds: 3600
+    scopes_documented: scopes/gardin-scopes.yml
+  sources: [docs]
+- name: BearerAuth
+  type: http
+  scheme: bearer
+  bearerFormat: JWT
+  usage: 'Authorization: Bearer {access_token} on all Gardin API requests'
+  sources: [docs]
+notes:
+- Client Id and Client Secret are provisioned by contacting Gardin Support (no self-service sign-up).
+- The login/token host (login.gardin.ag) does not publish an OIDC/OAuth discovery document (probed 404).
+- Enterprise SSO via Azure AD is documented for portal access at /docs/dev-guide/auth/azuread.
