@@ -1,0 +1,26 @@
+generated: '2026-07-19'
+method: searched
+source: https://developers.gardin.ag/docs/dev-guide/changelog/
+versioning:
+  scheme: uri-path + semver
+  current: v1
+  per_service_versions:
+    query_api: 2.1.0
+    dataflow_api: 1.1.0
+    notification_api: 1.0.0
+    login_api: 1.0.0
+    sensor_management_api: 1.0.0
+  docs: https://developers.gardin.ag/docs/dev-guide/changelog/
+deprecation:
+  policy: Breaking changes are released as MAJOR versions and documented in the changelog (e.g. Query API 2.0.0 removed filters/columns).
+  sunset_header: false
+  dedicated_policy_page: false
+sla:
+  url: null
+  uptime_target: null
+status_page: https://status.gardin.ag/
+changelog: https://developers.gardin.ag/docs/dev-guide/changelog/
+deprecated_operations: []
+notes:
+- Query API 2.0.0 (11 Aug 2025) was a breaking major release (removed data__deviceId column, sensors filter, controlAreas filter).
+- No RFC 8594 Sunset/Deprecation header support is documented, and there is no standalone deprecation-policy page, so no Deprecation pointer is emitted.

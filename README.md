@@ -1,5 +1,13 @@
 # Gardin
 
-Gardin is a company surfaced as a portfolio company of seedcamp and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+Gardin is a UK agritech company (Abingdon, Oxfordshire) whose product, **Gardin Pulse**, is a real-time plant-level crop intelligence platform built on an optical sensor that measures chlorophyll fluorescence to assess photosynthetic efficiency.
 
-Backed by: seedcamp — http://gardin.co.uk
+Gardin exposes plant-health data through the **Gardin API** — OAuth2 client-credentials-secured HTTP services:
+
+- **Query API** — asynchronous bulk download of chlorophyll-fluorescence (ChF) and Gardin-indices data (submit → poll → download CSV).
+- **Sensor Management API** — device registry, grouping, measurement/pick-poses jobs, schedules.
+- **Notification API** — real-time plant-health alerts over webhooks and websockets (HMAC-SHA256 signed).
+
+Developer portal: https://developers.gardin.ag/ · Status: https://status.gardin.ag/ · GitHub: https://github.com/gardinltd
+
+Backed by: seedcamp — https://gardin.ag/

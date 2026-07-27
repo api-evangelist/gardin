@@ -1,0 +1,44 @@
+generated: '2026-07-19'
+method: searched
+source: https://developers.gardin.ag/docs/gardin-api/gardin-api
+authentication:
+  style: OAuth2 client-credentials -> Bearer JWT
+  header: 'Authorization: Bearer {access_token}'
+  token_url: https://login.gardin.ag/oauth2/token
+  see: authentication/gardin-authentication.yml
+versioning:
+  scheme: uri-path
+  current: v1
+  base_url: https://api.gardin.ag/v1
+  release_scheme: semver (MAJOR.MINOR.PATCH) with dated, per-service release numbers
+  breaking_change_policy: breaking changes are shipped as MAJOR versions and recorded in the changelog
+  see: lifecycle/gardin-lifecycle.yml
+pagination:
+  style: limit-skip (offset)
+  params:
+    limit: max 100, default 50
+    skip: default 0
+  applies_to: [GET /devices]
+async_query:
+  pattern: submit-poll-download
+  steps:
+  - POST /query returns 202 with a query id
+  - GET query status until complete
+  - download query result as CSV
+  data_delay: results available with a 1-hour delay (reduced from 24h in Query API 2.0.4)
+error_envelope:
+  format: JSON object with a human-readable message field
+  problem_json: false
+  see: errors/gardin-problem-types.yml
+webhooks:
+  transport: [webhook, websocket]
+  signature: HMAC-SHA256 in the Gardin-Signature header
+  see: asyncapi/gardin-notification-webhooks.yml
+rate_limiting:
+  documented: false
+idempotency:
+  documented: false
+notes:
+- Timestamps are RFC-3339 / ISO-8601.
+- Identifiers (alertId, jobId, locationId, controlAreaId, tenantId) are ULIDs.
+- No idempotency-key header is documented, so no Idempotency pointer is emitted.

@@ -1,0 +1,41 @@
+generated: '2026-07-19'
+method: searched
+source: https://developers.gardin.ag/docs/gardin-api/plant-alert
+spec_type: Webhooks
+service: Gardin Notification API
+transports: [webhook, websocket]
+subscribe_scope: notifications.alerts:subscribe
+security:
+  signature_header: Gardin-Signature
+  algorithm: HMAC-SHA256
+docs:
+  notifications_guide: https://developers.gardin.ag/docs/dev-guide/integrations/notifications
+  plant_alert: https://developers.gardin.ag/docs/gardin-api/plant-alert
+events:
+- event: RAISED
+  description: A new alert condition was detected.
+- event: CLOSED
+  description: A previously raised alert condition was resolved.
+alert_categories:
+- code: PLANT_CRITICAL_ALERT
+  description: Health index below minimum threshold - immediate attention required.
+- code: PLANT_STRESS_ALERT
+  description: Early stress indicators detected before visible symptoms.
+- code: PLANT_LIGHT_ALERT
+  description: Efficiency index below minimum threshold - insufficient light.
+- code: PLANT_RECOVERY_ALERT
+  description: Plants returning to health.
+payload_fields:
+- {name: alertId, type: ULID}
+- {name: jobId, type: ULID}
+- {name: locationId, type: ULID}
+- {name: controlAreaId, type: ULID}
+- {name: tenantId, type: ULID}
+- {name: event, type: string, values: [RAISED, CLOSED]}
+- {name: alertCategory, type: string}
+- {name: state, type: string, values: [ACTIVE, CLOSED]}
+- {name: createdAt, type: rfc3339}
+- {name: closedAt, type: rfc3339}
+- {name: timestamp, type: rfc3339}
+notes:
+- Gardin publishes no AsyncAPI document; this is the documented webhook/websocket event catalog captured as a Webhooks artifact.

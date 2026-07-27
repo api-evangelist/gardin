@@ -1,0 +1,76 @@
+generated: '2026-07-19'
+method: derived
+source: https://developers.gardin.ag/docs/gardin-api/gardin-api
+note: >-
+  Entity graph derived from the documented Gardin API objects and their id
+  reference fields (no OpenAPI $ref graph is published; relationships inferred
+  from documented payload fields such as jobId, locationId, controlAreaId,
+  tenantId, deviceId).
+entities:
+- name: Tenant
+  id: tenantId
+  id_format: ULID
+  description: Licensed customer/organisation; scopes data access and licensed indices.
+- name: Location
+  id: locationId
+  id_format: ULID
+  description: A physical growing site (glasshouse, polytunnel, indoor farm).
+- name: ControlArea
+  id: controlAreaId
+  id_format: ULID
+  description: A control area within a location; addressable via controlAreaPathNames (hash-delimited paths).
+- name: Device
+  id: deviceId
+  aliases: [Sensor]
+  description: A Gardin optical photosynthesis sensor; groupable into Device Groups.
+- name: Job
+  id: jobId
+  id_format: ULID
+  description: A measurement / pick-poses / growth job run on a device.
+- name: Query
+  id: queryId
+  description: An asynchronous bulk data query (ChF or indices) with submit/status/download lifecycle.
+- name: Index
+  id: indexName
+  description: A Gardin index (HEALTH, EFFICIENCY, PRODUCTIVITY, ALPHA, DLI, DPI, ...).
+- name: Alert
+  id: alertId
+  id_format: ULID
+  description: A plant-health alert with a category and RAISED/CLOSED lifecycle.
+relationships:
+- from: Location
+  to: Tenant
+  type: belongs_to
+  via: tenantId
+- from: ControlArea
+  to: Location
+  type: belongs_to
+  via: locationId
+- from: Device
+  to: ControlArea
+  type: belongs_to
+  via: controlAreaId
+- from: Job
+  to: Device
+  type: belongs_to
+  via: deviceId
+- from: Alert
+  to: Job
+  type: belongs_to
+  via: jobId
+- from: Alert
+  to: ControlArea
+  type: belongs_to
+  via: controlAreaId
+- from: Alert
+  to: Location
+  type: belongs_to
+  via: locationId
+- from: Query
+  to: Index
+  type: references
+  via: indexNames
+- from: Query
+  to: Device
+  type: references
+  via: devices

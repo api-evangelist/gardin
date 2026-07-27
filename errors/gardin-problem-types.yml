@@ -1,0 +1,31 @@
+generated: '2026-07-19'
+method: searched
+source: https://developers.gardin.ag/docs/gardin-api/gardin-api
+format: custom-json-message
+envelope:
+  field: message
+  problem_json: false
+problems:
+- status: 202
+  title: Accepted
+  meaning: Query has been successfully submitted for execution (asynchronous).
+  source_operation: POST /query
+- status: 400
+  title: Bad Request
+  meaning: Invalid query, filter, or input parameters.
+  remediation: Correct the request body / query parameters and retry.
+  source_operation: POST /query, GET /devices
+- status: 401
+  title: Unauthorized
+  meaning: You are not authorized to perform this request (missing/invalid token).
+  remediation: Acquire a valid Bearer token with the required scope.
+  source_operation: GET /devices
+- status: 403
+  title: Forbidden
+  meaning: Invalid access token or the user is not authorized for this resource/scope.
+  remediation: Ensure the token carries the required scope for the operation.
+  source_operation: POST /query
+- status: 500
+  title: Internal Server Error
+  meaning: An internal server error occurred; contact Gardin Support if it persists.
+  source_operation: all

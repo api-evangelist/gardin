@@ -1,0 +1,24 @@
+generated: '2026-07-19'
+method: searched
+source: https://github.com/gardinltd
+note: >-
+  Gardin publishes first-party example/sample code on GitHub but no installable
+  client-library SDK on a public package registry (npm/PyPI/etc.). These are
+  runnable samples, not distributed SDK packages, so no SDKs pointer is emitted.
+packages:
+- language: python
+  registry: github
+  name: query-api-sample-python
+  url: https://github.com/gardinltd/query-api-sample-python
+  install: git clone https://github.com/gardinltd/query-api-sample-python
+  official: true
+  kind: sample
+  description: Self-contained Python script demonstrating OAuth2 client-credentials auth, submitting/monitoring a query job, and downloading results as CSV.
+- language: multi
+  registry: github
+  name: gardin-api-code-samples
+  url: https://github.com/gardinltd/gardin-api-code-samples
+  install: git clone https://github.com/gardinltd/gardin-api-code-samples
+  official: true
+  kind: sample
+  description: Official Gardin API code samples - Jupyter notebooks plus planned end-to-end Python and TypeScript samples (auth, list indices, list measurements, export to CSV, filter by control area).

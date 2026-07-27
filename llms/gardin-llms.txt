@@ -1,0 +1,33 @@
+# Gardin
+
+> Gardin is a UK agritech company whose product, Gardin Pulse, is a real-time plant-level crop intelligence platform built on an optical sensor that measures chlorophyll fluorescence to assess photosynthetic efficiency. The Gardin API exposes sensor/device management, an asynchronous bulk Query API for chlorophyll-fluorescence and Gardin-indices data, and a Notification API delivering plant-health alerts over webhooks and websockets. Authentication is OAuth2 client-credentials (Bearer JWT).
+
+## APIs
+
+- [Gardin API reference](https://developers.gardin.ag/docs/gardin-api/gardin-api): Full HTTP API reference (Query, Sensor Management, Notification).
+- [Query API - submit a query](https://developers.gardin.ag/docs/gardin-api/submit-a-new-query): POST /query for ChF/indices data (async submit-poll-download).
+- [Sensor Management - list sensors](https://developers.gardin.ag/docs/gardin-api/list-all-sensors): GET /devices with limit/skip paging.
+- [Notification API - plant alert](https://developers.gardin.ag/docs/gardin-api/plant-alert): Webhook/websocket plant-health alerts, HMAC-SHA256 signed.
+
+## Docs
+
+- [Getting started](https://developers.gardin.ag/docs/dev-guide/getting-started/welcome): Developer welcome and orientation.
+- [Acquire access token (client credentials)](https://developers.gardin.ag/docs/gardin-api/acquire-access-token-client-credentials-flow): OAuth2 token flow at https://login.gardin.ag/oauth2/token.
+- [Changelog](https://developers.gardin.ag/docs/dev-guide/changelog/): Per-service semver release history.
+- [Notifications integration guide](https://developers.gardin.ag/docs/dev-guide/integrations/notifications): Webhook/websocket setup.
+- [Priva integration](https://developers.gardin.ag/docs/dev-guide/integrations/data-partners/priva)
+- [Ridder integration](https://developers.gardin.ag/docs/dev-guide/integrations/data-partners/ridder)
+- [LetsGrow integration](https://developers.gardin.ag/docs/dev-guide/integrations/data-partners/letsgrow)
+
+## Repos
+
+- [query-api-sample-python](https://github.com/gardinltd/query-api-sample-python): Python sample - auth, query, CSV download.
+- [gardin-api-code-samples](https://github.com/gardinltd/gardin-api-code-samples): Official code samples (Jupyter + planned Python/TypeScript).
+
+## Company
+
+- [Website](https://gardin.ag/)
+- [Product - Gardin Pulse](https://gardin.ag/product)
+- [News](https://gardin.ag/news)
+- [Status](https://status.gardin.ag/)
+- [Contact](https://gardin.ag/contact)

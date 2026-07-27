@@ -1,25 +1,146 @@
 aid: gardin
 name: Gardin
-description: Gardin is a company surfaced as a portfolio company of seedcamp and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Gardin is a UK-based agritech company (Abingdon, Oxfordshire) whose product,
+  Gardin Pulse, is a real-time plant-level crop intelligence platform built on
+  an optical sensor that measures chlorophyll fluorescence to assess
+  photosynthetic efficiency. The sensors detect crop stress weeks before visible
+  symptoms appear, letting growers optimise lighting, irrigation and climate
+  control across glasshouses, polytunnels and indoor farms. Gardin exposes this
+  plant-health data to growers and developers through the Gardin API — a set of
+  OAuth2 client-credentials-secured HTTP services covering sensor/device
+  management, an asynchronous bulk Query API for chlorophyll-fluorescence and
+  Gardin-indices data, and a Notification API that delivers real-time plant
+  alerts over webhooks and websockets. Gardin also integrates plant feedback into
+  leading climate-control systems including Priva, Ridder and LetsGrow.
 url: https://raw.githubusercontent.com/api-evangelist/gardin/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://gardin.ag/_astro/get-started.BY5JeD8x.png
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - seedcamp
-x-tier: stub
+x-tier: enriched
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
-apis: []
+- Agriculture
+- Agritech
+- Precision Agriculture
+- Plant Health
+- Photosynthesis
+- IoT
+- Sensors
+- Greenhouse
+- Crop Intelligence
+- Sustainability
+- Data
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- name: Gardin Query API
+  description: >-
+    Asynchronous bulk data API for downloading chlorophyll-fluorescence (ChF) and
+    Gardin-indices data. Submit a query, poll its status, then download the result
+    set as CSV. Supports control-area, device, index-name, daytime and time-range
+    filters.
+  humanURL: https://developers.gardin.ag/docs/gardin-api/submit-a-new-query
+  baseURL: https://api.gardin.ag/v1
+  properties:
+  - type: APIReference
+    url: https://developers.gardin.ag/docs/gardin-api/submit-a-new-query
+- name: Gardin Sensor Management API
+  description: >-
+    Device registry and control API to list and find sensors, group devices, run
+    and stop measurement / pick-poses jobs, enable or disable schedules, and check
+    command job status.
+  humanURL: https://developers.gardin.ag/docs/gardin-api/list-all-sensors
+  baseURL: https://api.gardin.ag/v1
+  properties:
+  - type: APIReference
+    url: https://developers.gardin.ag/docs/gardin-api/list-all-sensors
+- name: Gardin Notification API
+  description: >-
+    Real-time plant-health alert delivery over webhooks and websockets. Emits
+    PLANT_CRITICAL_ALERT, PLANT_STRESS_ALERT, PLANT_LIGHT_ALERT and
+    PLANT_RECOVERY_ALERT events (RAISED / CLOSED) with an HMAC-SHA256
+    Gardin-Signature header for verification.
+  humanURL: https://developers.gardin.ag/docs/gardin-api/plant-alert
+  baseURL: https://api.gardin.ag/v1
+  properties:
+  - type: Webhooks
+    url: asyncapi/gardin-notification-webhooks.yml
 common:
 - type: Website
-  url: http://gardin.co.uk
+  url: https://gardin.ag/
+- type: DeveloperPortal
+  url: https://developers.gardin.ag/
+- type: Documentation
+  url: https://developers.gardin.ag/docs/dev-guide/getting-started/welcome
+- type: APIReference
+  url: https://developers.gardin.ag/docs/gardin-api/gardin-api
+- type: GettingStarted
+  url: https://developers.gardin.ag/docs/dev-guide/getting-started/welcome
+- type: ChangeLog
+  url: https://developers.gardin.ag/docs/dev-guide/changelog/
+- type: StatusPage
+  url: https://status.gardin.ag/
+- type: GitHubOrganization
+  url: https://github.com/gardinltd
+- type: Blog
+  url: https://gardin.ag/news
+- type: Support
+  url: https://gardin.ag/contact
+- type: PrivacyPolicy
+  url: https://gardin.ag/documents/GardinPrivacyNotice.pdf
+- type: Authentication
+  url: authentication/gardin-authentication.yml
+- type: OAuthScopes
+  url: scopes/gardin-scopes.yml
+- type: Conventions
+  url: conventions/gardin-conventions.yml
+- type: ErrorCatalog
+  url: errors/gardin-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/gardin-lifecycle.yml
+- type: ChangeLog
+  url: changelog/gardin-changelog.yml
+  name: Gardin API Changelog (artifact)
+- type: Webhooks
+  url: asyncapi/gardin-notification-webhooks.yml
+- type: Packages
+  url: packages/gardin-packages.yml
+- type: MCPServer
+  url: mcp/gardin-mcp.yml
+- type: LLMsTxt
+  url: llms/gardin-llms.txt
+- type: WellKnown
+  url: well-known/gardin-well-known.yml
+- type: DomainSecurity
+  url: security/gardin-domain-security.yml
+- type: Conformance
+  url: conformance/gardin-conformance.yml
+- type: DataModel
+  url: data-model/gardin-data-model.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

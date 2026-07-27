@@ -1,0 +1,53 @@
+generated: '2026-07-19'
+method: searched
+source: https://developers.gardin.ag/docs/gardin-api/gardin-api
+docs: https://developers.gardin.ag/docs/gardin-api/gardin-api
+schemes:
+- name: OAuth2ClientCredentials
+  flow: clientCredentials
+  tokenUrl: https://login.gardin.ag/oauth2/token
+scopes:
+- scope: data.chf:query
+  description: Query chlorophyll-fluorescence (ChF) data via the Query API.
+  service: Query API
+  flows: [clientCredentials]
+- scope: data.indices:query
+  description: Query Gardin indices data via the Query API.
+  service: Query API
+  flows: [clientCredentials]
+- scope: devices:command
+  description: Send commands to Gardin sensors.
+  service: Sensor Management API
+  flows: [clientCredentials]
+- scope: devices:control
+  description: Control sensor hardware settings.
+  service: Sensor Management API
+  flows: [clientCredentials]
+- scope: devices.registry:read
+  description: Read the device/sensor registry.
+  service: Sensor Management API
+  flows: [clientCredentials]
+- scope: devices.registry:write
+  description: Manage (write) the device/sensor registry.
+  service: Sensor Management API
+  flows: [clientCredentials]
+- scope: jobs:read
+  description: Read growth / measurement job status.
+  service: Sensor Management API
+  flows: [clientCredentials]
+- scope: jobs:write
+  description: Create or update growth / measurement jobs.
+  service: Sensor Management API
+  flows: [clientCredentials]
+- scope: jobs:execute
+  description: Execute (start/stop) growth / measurement jobs.
+  service: Sensor Management API
+  flows: [clientCredentials]
+- scope: notifications:subscribe
+  description: Subscribe to general notifications.
+  service: Notification API
+  flows: [clientCredentials]
+- scope: notifications.alerts:subscribe
+  description: Subscribe to plant-health alert notifications.
+  service: Notification API
+  flows: [clientCredentials]

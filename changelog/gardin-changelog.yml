@@ -1,0 +1,56 @@
+generated: '2026-07-19'
+method: searched
+source: https://developers.gardin.ag/docs/dev-guide/changelog/
+scheme: semver (MAJOR.MINOR.PATCH), per-service, dated
+current:
+  query_api: 2.1.0
+  dataflow_api: 1.1.0
+  notification_api: 1.0.0
+  login_api: 1.0.0
+  sensor_management_api: 1.0.0
+entries:
+- service: Query API
+  version: 2.1.0
+  date: '2026-07-09'
+  breaking: false
+  highlights:
+  - ALPHA index now available via Query API for tenants licensed for EFFICIENCY.
+  - Bug fix for DLI and DPI where the includeFilled filter and isFilled result column had no effect.
+- service: Dataflow API
+  version: 1.1.0
+  date: '2026-07-09'
+  breaking: false
+  highlights:
+  - ALPHA index support added across Priva One, Ridder Hortimax Pro, and LetsGrow data-partner integrations.
+- service: Query API
+  version: 2.0.4
+  date: '2026-02-10'
+  breaking: false
+  highlights:
+  - All Query API users now have access to data with a 1-hour delay, reduced from 24 hours.
+- service: Query API
+  version: 2.0.0
+  date: '2025-08-11'
+  breaking: true
+  highlights:
+  - Removed the data__deviceId column from result sets for indices queries.
+  - Removed the sensors filter.
+  - Removed the controlAreas filter, superseded by controlAreaPathNames.
+- service: Notification API
+  version: 1.0.0
+  date: '2025-11-23'
+  breaking: false
+  highlights:
+  - Initial release of the Notification API (plant alerts over webhook / websocket).
+- service: Login API
+  version: 1.0.0
+  date: '2024-02-19'
+  breaking: false
+  highlights:
+  - Initial release.
+- service: Sensor Management API
+  version: 1.0.0
+  date: '2024-02-19'
+  breaking: false
+  highlights:
+  - Initial release.

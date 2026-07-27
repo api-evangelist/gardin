@@ -1,0 +1,57 @@
+generated: '2026-07-19'
+method: derived
+status: candidate
+source: https://developers.gardin.ag/docs/gardin-api/gardin-api
+note: >-
+  Gardin publishes no hosted/remote MCP server. This is a candidate tool list
+  derived from the documented Gardin API operations (paths grounded in the public
+  API reference; no OpenAPI spec is published, so operationIds are the documented
+  operation names).
+server:
+  name: gardin
+  transport: http
+tools:
+- name: submit_query
+  description: Submit a new asynchronous query for ChF or indices data.
+  source_operation: POST /query
+  scopes: [data.chf:query, data.indices:query]
+- name: get_query_status
+  description: Get the status of a submitted query.
+  source_operation: GET /query/{id}/status
+  scopes: [data.chf:query, data.indices:query]
+- name: cancel_query
+  description: Cancel a submitted query.
+  source_operation: POST /query/{id}/cancel
+  scopes: [data.chf:query, data.indices:query]
+- name: download_query_result
+  description: Download the result of a completed query as CSV.
+  source_operation: GET /query/{id}/download
+  scopes: [data.chf:query, data.indices:query]
+- name: list_sensors
+  description: List all sensors / devices with paging (limit/skip) and group filters.
+  source_operation: GET /devices
+  scopes: [devices.registry:read]
+- name: find_sensor_by_name
+  description: Find a sensor by name.
+  source_operation: GET /devices/{name}
+  scopes: [devices.registry:read]
+- name: start_measurement_job
+  description: Start a measurement job on a device.
+  source_operation: POST /devices/{id}/jobs/measurement
+  scopes: [jobs:execute, devices:command]
+- name: start_pick_poses_job
+  description: Start a pick-poses job on a device.
+  source_operation: POST /devices/{id}/jobs/pick-poses
+  scopes: [jobs:execute, devices:command]
+- name: stop_current_job
+  description: Stop the current job on a device.
+  source_operation: POST /devices/{id}/jobs/stop
+  scopes: [jobs:execute, devices:command]
+- name: enable_disable_schedule
+  description: Enable or disable a device schedule.
+  source_operation: PUT /devices/{id}/schedule
+  scopes: [devices:control]
+- name: get_latest_command_job_status
+  description: Get the latest command job status for a device.
+  source_operation: GET /devices/{id}/jobs/latest
+  scopes: [jobs:read]
