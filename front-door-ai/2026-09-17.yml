@@ -1,0 +1,27 @@
+# Front Door AI Index — gardin — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: gardin
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: gardin.ag
+  final_host: gardin.ag
+  ownership: own
+  owner: gardin
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 3
+  host_score: 3
+  density: 2.09
+  words: 1438
+  tiers:
+    agentic: 1
+    core: 2
+    model: 0
+  ambiguous: 3
+  top_terms:
+    intelligence: 3
+    AI: 2
+    fine-tune: 1
