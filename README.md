@@ -64,14 +64,115 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Gardin is a UK agritech company (Abingdon, Oxfordshire) whose product, **Gardin Pulse**, is a real-time plant-level crop intelligence platform built on an optical sensor that measures chlorophyll fluorescence to assess photosynthetic efficiency.
+Gardin is a UK-based agritech company (Abingdon, Oxfordshire) whose product, Gardin Pulse, is a real-time plant-level crop intelligence platform built on an optical sensor that measures chlorophyll fluorescence to assess photosynthetic efficiency. The sensors detect crop stress weeks before visible symptoms appear, letting growers optimise lighting, irrigation and climate control across glasshouses, polytunnels and indoor farms. Gardin exposes this plant-health data to growers and developers through the Gardin API — a set of OAuth2 client-credentials-secured HTTP services covering sensor/device management, an asynchronous bulk Query API for chlorophyll-fluorescence and Gardin-indices data, and a Notification API that delivers real-time plant alerts over webhooks and websockets. Gardin also integrates plant feedback into leading climate-control systems including Priva, Ridder and LetsGrow.
 
-Gardin exposes plant-health data through the **Gardin API** — OAuth2 client-credentials-secured HTTP services:
+**Areas:** Company · Agriculture · AgTech · Precision Agriculture · Plant Health · Photosynthesis · IoT · Sensors · Greenhouse · Crop Intelligence · Sustainability · Data
 
-- **Query API** — asynchronous bulk download of chlorophyll-fluorescence (ChF) and Gardin-indices data (submit → poll → download CSV).
-- **Sensor Management API** — device registry, grouping, measurement/pick-poses jobs, schedules.
-- **Notification API** — real-time plant-health alerts over webhooks and websockets (HMAC-SHA256 signed).
+## Gardin on APIs.io
 
-Developer portal: https://developers.gardin.ag/ · Status: https://status.gardin.ag/ · GitHub: https://github.com/gardinltd
+Everything profiled for Gardin is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/gardin/](https://apis.io/providers/gardin/)** — or go straight to one of the APIs or properties below.
 
-Backed by: seedcamp — https://gardin.ag/
+### APIs (3)
+
+- [Gardin Query API](https://apis.io/apis/gardin/gardin-query-api/) — Asynchronous bulk data API for downloading chlorophyll-fluorescence (ChF) and Gardin-indices data. Submit a query, poll its status, then download the result…
+- [Gardin Sensor Management API](https://apis.io/apis/gardin/gardin-sensor-management-api/) — Device registry and control API to list and find sensors, group devices, run and stop measurement / pick-poses jobs, enable or disable schedules, and check…
+- [Gardin Notification API](https://apis.io/apis/gardin/gardin-notification-api/) — Real-time plant-health alert delivery over webhooks and websockets. Emits PLANT_CRITICAL_ALERT, PLANT_STRESS_ALERT, PLANT_LIGHT_ALERT and…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### AsyncAPI (1)
+
+Event-driven and webhook contracts.
+
+- [Gardin Notification Webhooks](https://apis.io/asyncapis/gardin/gardin-notification-webhooks/)
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [gardin](https://apis.io/servers/gardin/gardin/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Gardin Authentication](https://apis.io/security/gardin/gardin-authentication/)
+- [Gardin Domain Security](https://apis.io/security/gardin/gardin-domain-security/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Gardin Scopes](https://apis.io/scopes/gardin/gardin-scopes/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://gardin.ag/)
+- [Documentation](https://developers.gardin.ag/docs/dev-guide/getting-started/welcome)
+- [Getting started](https://developers.gardin.ag/docs/dev-guide/getting-started/welcome)
+- [API reference](https://developers.gardin.ag/docs/gardin-api/gardin-api)
+- [Support](https://gardin.ag/contact)
+- [Changelog](https://developers.gardin.ag/docs/dev-guide/changelog/)
+- [Blog](https://gardin.ag/news)
+- [Privacy policy](https://gardin.ag/documents/GardinPrivacyNotice.pdf)
+- [GitHub](https://github.com/gardinltd)
+- [Status](https://status.gardin.ag/)
+
+## API Evangelist rating
+
+**Kin Score 40.4** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 78.6 |
+| Contract quality | 39.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 34.2 |
+| Developer ergonomics | 57.1 |
+| Access clarity | 10.5 |
+
+**Agent readiness 22.7** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | yes |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 29.7** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/gardin/](https://apis.io/providers/gardin/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Gardin: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/gardin/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
